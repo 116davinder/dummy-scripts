@@ -1,0 +1,15 @@
+---
+
+- hosts: localhost
+  gather_facts: false
+  serial: 1
+  tasks:
+  - shell: "/bin/df -H | grep root | awk '{ print $5 }' | cut -d'%' -f1"
+    register: disk_free
+
+  - name: Low Disk Space | "/"
+    debug:
+      msg : "Total used Space in Percentage : {{ disk_free.stdout }} \n
+             Hostname : {{ ansible_host }}"
+    when:
+      - 'disk_free.stdout | int >= 80'
