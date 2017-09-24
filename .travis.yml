@@ -12,4 +12,3 @@ install:
 script:
   # Check the role/playbook's syntax.
   - "ansible-playbook -i inventory disk.yml --syntax-check"
-  - "ansible-playbook -i inventory disk.yml"
