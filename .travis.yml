@@ -11,4 +11,4 @@ install:
 
 script:
   # Check the role/playbook's syntax.
-  - "ansible-playbook disk.yml --syntax-check"
+  - "ansible-playbook disk.yml localhost"
