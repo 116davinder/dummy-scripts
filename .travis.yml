@@ -2,8 +2,8 @@
 language: python
 python: "2.7"
 
-env:
-  - SITE=disk.yml
+os:
+  - linux
 
 install:
   # Install Ansible.
@@ -11,4 +11,5 @@ install:
 
 script:
   # Check the role/playbook's syntax.
-  - "ansible-playbook disk.yml localhost --syntax-check"
+  - "ansible-playbook -i inventory disk.yml --syntax-check"
+  - "ansible-playbook -i inventory disk.yml"
