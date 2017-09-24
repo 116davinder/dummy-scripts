@@ -4,7 +4,7 @@
   gather_facts: false
   serial: 1
   vars:
-    disk_usage_limit: 1
+    disk_usage_limit: 90
   tasks:
 
   - name: Getting All Disk Status
