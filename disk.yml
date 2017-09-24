@@ -23,3 +23,5 @@
 # Todo
 # 1. Remove above shell command with ansible facts {{ ansible_mounts }}
 # 2. test on multiple systems
+# 3. use below command to find largest files
+# find -type f -exec du -Sh {} + | sort -rh | head -n 5
