@@ -3,13 +3,23 @@
 - hosts: localhost
   gather_facts: false
   serial: 1
+  vars:
+    disk_usage_limit: 1
   tasks:
-  - shell: "/bin/df -H | grep root | awk '{ print $5 }' | cut -d'%' -f1"
-    register: disk_free
 
-  - name: Low Disk Space | "/"
+  - name: Getting All Disk Status
+    shell: '/bin/df -h | tail -n +2 | grep -vE "^Filesystem|tmpfs|devtmpfs" | sed s/%//g | awk "{ if(\$5 > {{ disk_usage_limit }}) print \$0 ;}"'
+    register: disk_status
+
+  - name: Sending Notifications to Channel
     debug:
-      msg : "Total used Space in Percentage : {{ disk_free.stdout }} \n
-             Hostname : {{ ansible_host }}"
+      msg: "{{ disk_status.stdout }}"
     when:
-      - 'disk_free.stdout | int >= 80'
+      - disk_status.stdout != ''
+
+# alternate method to find status
+#df -lh -a "/home" | grep -vE "^Filesystem|tmpfs|devtmpfs" | awk '{ print $5 }' | cut -d'%' -f1"
+
+# Todo
+# 1. Remove above shell command with ansible facts {{ ansible_mounts }}
+# 2. test on multiple systems
