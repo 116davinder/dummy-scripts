@@ -26,7 +26,13 @@
     enable_filetree_gitstatus = true
 
 [[layers]]
+name = "git"
+
+[[layers]]
 name = "format"
+
+[[layers]]
+name = "fzf"
 
 # Enable autocomplete layer
 [[layers]]
