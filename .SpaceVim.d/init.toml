@@ -22,17 +22,32 @@
     statusline_iseparator = "arrow"
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
-    enable_statusline_mode = false
+    enable_statusline_mode = true
     enable_filetree_gitstatus = true
+    filemanager = "nerdtree"
+    bootstrap_after = "myconfig#after"
+    statusline_left_sections = [
+       'major mode',
+       'filename',
+       'version control info',
+    ]
+    statusline_right_sections = [
+       'cursorpos',
+       'input method',
+       'time'
+    ]
 
 [[layers]]
 name = "git"
 
 [[layers]]
+name = "VersionControl"
+
+[[layers]]
 name = "format"
 
 [[layers]]
-name = "fzf"
+name = "leaderf"
 
 # Enable autocomplete layer
 [[layers]]
