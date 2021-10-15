@@ -1,5 +1,7 @@
 function! myconfig#after() abort
   set noswapfile
+  set wildignore+=*.pyc,.git/
+  let NERDTreeRespectWildIgnore=1
 
   fun! TrimWhitespace()
     let l:save = winsaveview()
@@ -8,4 +10,5 @@ function! myconfig#after() abort
   endfun
 
   autocmd BufWritePre * call TrimWhitespace()
+
 endfunction
