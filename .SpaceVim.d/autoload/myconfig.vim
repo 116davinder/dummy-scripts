@@ -1,7 +1,7 @@
 function! myconfig#after() abort
   set noswapfile
-  set wildignore+=*.pyc,.git/
-  let NERDTreeRespectWildIgnore=1
+  let g:spacevim_search_tools = ['rg', 'ag', 'pt', 'ack', 'grep']
+  let g:spacevim_wildignore = '*/tmp/*,*.so,*.swp,*.zip,*.class,tags,*.jpg,*.ttf,*.TTF,*.png,*/target/*,.git,.svn,.hg,.DS_Store,*.svg'
 
   fun! TrimWhitespace()
     let l:save = winsaveview()
