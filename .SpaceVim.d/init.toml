@@ -11,8 +11,8 @@
     # set spacevim theme. by default colorscheme layer is not loaded,
     # if you want to use more colorscheme, please load the colorscheme
     # layer
-    colorscheme = "nord"
-    colorscheme_bg = "dark"
+    # colorscheme = "nord"
+    # colorscheme_bg = "dark"
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
     enable_guicolors = true
@@ -38,6 +38,9 @@
     ]
 
 [[layers]]
+name = "default"
+
+[[layers]]
 name = "git"
 
 [[layers]]
@@ -46,16 +49,11 @@ name = "VersionControl"
 [[layers]]
 name = "format"
 
-[[layers]]
-name = "leaderf"
-
 # Enable autocomplete layer
 [[layers]]
 name = "lang#python"
+enable = true
 format_on_save = true
-
-[[layers]]
-name = "colorscheme"
 
 [[layers]]
 name = 'autocomplete'
