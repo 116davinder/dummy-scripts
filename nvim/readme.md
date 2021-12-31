@@ -4,7 +4,7 @@ Install neovim using snap or appimage
 ### dependencies
 * git
 * curl
-* silversearcher-ag `sudo apt install silversearcher-ag -y`
+* ripgrep `sudo apt install ripgrep -y`
 * nerdfonts (optional)
 * xclip ( for Linux based system )
 ```bash
