@@ -47,6 +47,8 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 :map <F3> :NERDTreeToggle<CR>
+vnoremap <Tab> >
+vnoremap <S-Tab> <
 
 " save file with <leader>+s
 nnoremap <leader>s :update<CR>
